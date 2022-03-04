@@ -11,8 +11,12 @@ end
 nVals = numel(colorVals);
 luminance = zeros(nVals,1);
 
-fileName = sprintf('data/gammaCalibration_channel%d_%s', colorChannel, ...
-    datestr(now,'yyyymmdd-HHMM'));
+% Make directory to save data
+dataDir = sprintf('%s/data',pwd); 
+if ~exist(dataDir, 'dir')
+    mkdir(dataDir)
+end
+fileName = sprintf('%s/gammaCalibration_%s.mat', dataDir, datestr(now,'yyyymmdd-HHMM'));
 
 % ------------------------------------------------------------------------
 % Screen setup
@@ -51,9 +55,11 @@ for iVal = 1:nVals
     if ~isempty(lumReading)
         luminance(iVal) = lumReading;
     end
+    
+    % save on every presentation 
+    save(fileName, 'colorChannel', 'colorVals', 'luminance')
 end
 
 % Finish up
-save(fileName, 'colorChannel', 'colorVals', 'luminance')
 Screen('CloseAll');
 
