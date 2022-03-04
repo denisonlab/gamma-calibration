@@ -1,4 +1,4 @@
-function luminance = rd_gammaCalibration(colorChannel, colorVals)
+function luminance = rd_gammaCalibration(colorChannel, colorVals, monitorName)
 %
 % function luminance = rd_gammaCalibration(colorChannel, colorVals)
 
@@ -8,6 +8,9 @@ end
 if nargin<2
     colorVals = 0:255;
 end
+if nargin<3
+    monitorName = []; 
+end
 nVals = numel(colorVals);
 luminance = zeros(nVals,1);
 
@@ -16,7 +19,7 @@ dataDir = sprintf('%s/data',pwd);
 if ~exist(dataDir, 'dir')
     mkdir(dataDir)
 end
-fileName = sprintf('%s/gammaCalibration_%s.mat', dataDir, datestr(now,'yyyymmdd-HHMM'));
+fileName = sprintf('%s/gammaCalibration_%s_%s.mat', dataDir, monitorName, datestr(now,'yyyymmdd-HHMM'));
 
 % ------------------------------------------------------------------------
 % Screen setup
