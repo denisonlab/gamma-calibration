@@ -1,0 +1,8 @@
+function plotGamma
+
+%% load gamma data 
+dataName = 'gammaCalibration_DenLab-Behav_20220304-1247.mat'; % gammaCalibration_DenLab-EEG_20220304-1444.mat
+dataPath = sprintf('%s/data/%s', pwd, dataName); 
+data = load(dataPath); % data.colorVals, data.luminance  
+
+%% plot 
