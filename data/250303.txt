@@ -1,0 +1,14 @@
+Luminance for [0  0  0]:0.13
+Luminance for [5  5  5]:0.23
+Luminance for [10  10  10]:0.57
+Luminance for [15  15  15]:0.99
+Luminance for [20  20  20]:1.38
+Luminance for [25  25  25]:2.27
+Luminance for [30  30  30]:3.36
+Luminance for [35  35  35]:4.25
+Luminance for [40  40  40]:6.12
+Luminance for [45  45  45]:6.46
+Luminance for [50  50  50]:8.31
+Luminance for [55  55  55]:10.20
+Luminance for [60  60  60]:11.90
+Luminance for [65  65  65]:11.40
