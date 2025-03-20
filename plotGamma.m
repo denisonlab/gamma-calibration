@@ -10,16 +10,17 @@ data = load(dataPath); % data.colorVals, data.luminance
 %% Plot 
 figure
 scatter(data.colorVals, data.luminance) 
-figTitle = dataName(1:end-4); 
-title(sprintf('%s', und2space(figTitle))) 
-xlabel('Color val (step size = 5)')
+figTitle = 'gammaCalibration_DenLab-Behav_20250320'; %dataName(1:end-4); 
+% title(sprintf('%s', und2space(figTitle))) 
+xlabel('Color val')
 ylabel('Luminance') 
 
 % format 
 box off
 grid on
 axis square 
-xlim([0 255])
+xlim([0 256])
+xticks([0:32:256])
 set(gca,'TickDir','out');
 ax = gca;
 ax.LineWidth = 1.5;
